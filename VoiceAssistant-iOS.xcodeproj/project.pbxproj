@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51ED7D667AB2F44EA7410053 /* Pods_VoiceAssistant_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BAFB7D14730BDB9DE85DE53 /* Pods_VoiceAssistant_iOSUITests.framework */; };
+		A60A030460D750A3FEE22B91 /* Pods_VoiceAssistant_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172B3FD45787A734C5169E36 /* Pods_VoiceAssistant_iOS.framework */; };
+		E1163ED31FDEC1960072DF48 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1163ED21FDEC1960072DF48 /* AVFoundation.framework */; };
 		E177BE571FB9E52F0016E81E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E177BE561FB9E52F0016E81E /* AppDelegate.swift */; };
 		E177BE591FB9E52F0016E81E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E177BE581FB9E52F0016E81E /* ViewController.swift */; };
 		E177BE5C1FB9E52F0016E81E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E177BE5A1FB9E52F0016E81E /* Main.storyboard */; };
@@ -14,6 +17,7 @@
 		E177BE611FB9E52F0016E81E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E177BE5F1FB9E52F0016E81E /* LaunchScreen.storyboard */; };
 		E177BE6C1FB9E52F0016E81E /* VoiceAssistant_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E177BE6B1FB9E52F0016E81E /* VoiceAssistant_iOSTests.swift */; };
 		E177BE771FB9E52F0016E81E /* VoiceAssistant_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E177BE761FB9E52F0016E81E /* VoiceAssistant_iOSUITests.swift */; };
+		F49B52DCE6F89D8D558E8C9C /* Pods_VoiceAssistant_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABA1973BE486294A48C2E84E /* Pods_VoiceAssistant_iOSTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B1B60D92DAA9A3084CF7ED8 /* Pods-VoiceAssistant-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceAssistant-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceAssistant-iOS/Pods-VoiceAssistant-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		172B3FD45787A734C5169E36 /* Pods_VoiceAssistant_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoiceAssistant_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C302F9EF5BE2587CA4315A6 /* Pods-VoiceAssistant-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceAssistant-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceAssistant-iOSTests/Pods-VoiceAssistant-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		27AE00B0F03FCCF68059EC74 /* Pods-VoiceAssistant-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceAssistant-iOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceAssistant-iOSUITests/Pods-VoiceAssistant-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2BAFB7D14730BDB9DE85DE53 /* Pods_VoiceAssistant_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoiceAssistant_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A4FF2213396CA77F2966C08 /* Pods-VoiceAssistant-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceAssistant-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceAssistant-iOSTests/Pods-VoiceAssistant-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6E12E32110F5746E3861ED53 /* Pods-VoiceAssistant-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceAssistant-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceAssistant-iOS/Pods-VoiceAssistant-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		9760AACD2F835F981D147D09 /* Pods-VoiceAssistant-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceAssistant-iOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceAssistant-iOSUITests/Pods-VoiceAssistant-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		ABA1973BE486294A48C2E84E /* Pods_VoiceAssistant_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoiceAssistant_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1163ED01FDEC0EA0072DF48 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		E1163ED21FDEC1960072DF48 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E177BE531FB9E52F0016E81E /* VoiceAssistant-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VoiceAssistant-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E177BE561FB9E52F0016E81E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E177BE581FB9E52F0016E81E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1163ED31FDEC1960072DF48 /* AVFoundation.framework in Frameworks */,
+				A60A030460D750A3FEE22B91 /* Pods_VoiceAssistant_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F49B52DCE6F89D8D558E8C9C /* Pods_VoiceAssistant_iOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +86,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51ED7D667AB2F44EA7410053 /* Pods_VoiceAssistant_iOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C8A38DCD3B29CA4032F5352 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0B1B60D92DAA9A3084CF7ED8 /* Pods-VoiceAssistant-iOS.debug.xcconfig */,
+				6E12E32110F5746E3861ED53 /* Pods-VoiceAssistant-iOS.release.xcconfig */,
+				5A4FF2213396CA77F2966C08 /* Pods-VoiceAssistant-iOSTests.debug.xcconfig */,
+				1C302F9EF5BE2587CA4315A6 /* Pods-VoiceAssistant-iOSTests.release.xcconfig */,
+				9760AACD2F835F981D147D09 /* Pods-VoiceAssistant-iOSUITests.debug.xcconfig */,
+				27AE00B0F03FCCF68059EC74 /* Pods-VoiceAssistant-iOSUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E1163ECF1FDEC0EA0072DF48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1163ED21FDEC1960072DF48 /* AVFoundation.framework */,
+				E1163ED01FDEC0EA0072DF48 /* AVKit.framework */,
+				172B3FD45787A734C5169E36 /* Pods_VoiceAssistant_iOS.framework */,
+				ABA1973BE486294A48C2E84E /* Pods_VoiceAssistant_iOSTests.framework */,
+				2BAFB7D14730BDB9DE85DE53 /* Pods_VoiceAssistant_iOSUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E177BE4A1FB9E52E0016E81E = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +125,8 @@
 				E177BE6A1FB9E52F0016E81E /* VoiceAssistant-iOSTests */,
 				E177BE751FB9E52F0016E81E /* VoiceAssistant-iOSUITests */,
 				E177BE541FB9E52F0016E81E /* Products */,
+				E1163ECF1FDEC0EA0072DF48 /* Frameworks */,
+				1C8A38DCD3B29CA4032F5352 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +178,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E177BE7B1FB9E52F0016E81E /* Build configuration list for PBXNativeTarget "VoiceAssistant-iOS" */;
 			buildPhases = (
+				CA4BA3DC90C310E5F379335E /* [CP] Check Pods Manifest.lock */,
 				E177BE4F1FB9E52E0016E81E /* Sources */,
 				E177BE501FB9E52E0016E81E /* Frameworks */,
 				E177BE511FB9E52E0016E81E /* Resources */,
+				55F0516C03BFA4BF2BF3CBD5 /* [CP] Embed Pods Frameworks */,
+				FD8285D308E534626A77BBAA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +198,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E177BE7E1FB9E52F0016E81E /* Build configuration list for PBXNativeTarget "VoiceAssistant-iOSTests" */;
 			buildPhases = (
+				D202856B5ED06568FD298487 /* [CP] Check Pods Manifest.lock */,
 				E177BE631FB9E52F0016E81E /* Sources */,
 				E177BE641FB9E52F0016E81E /* Frameworks */,
 				E177BE651FB9E52F0016E81E /* Resources */,
+				29A05449AA069B6C733FC615 /* [CP] Embed Pods Frameworks */,
+				B23693BB5C7E0ACAE216D7EB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +219,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E177BE811FB9E52F0016E81E /* Build configuration list for PBXNativeTarget "VoiceAssistant-iOSUITests" */;
 			buildPhases = (
+				577D5A0B5CFD8B8335A4F570 /* [CP] Check Pods Manifest.lock */,
 				E177BE6E1FB9E52F0016E81E /* Sources */,
 				E177BE6F1FB9E52F0016E81E /* Frameworks */,
 				E177BE701FB9E52F0016E81E /* Resources */,
+				2CC565961C38191D90EC14BB /* [CP] Embed Pods Frameworks */,
+				ED8719E3E3B6DD94543A511F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +308,156 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		29A05449AA069B6C733FC615 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VoiceAssistant-iOSTests/Pods-VoiceAssistant-iOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2CC565961C38191D90EC14BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VoiceAssistant-iOSUITests/Pods-VoiceAssistant-iOSUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55F0516C03BFA4BF2BF3CBD5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VoiceAssistant-iOS/Pods-VoiceAssistant-iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VoiceAssistant-iOS/Pods-VoiceAssistant-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		577D5A0B5CFD8B8335A4F570 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VoiceAssistant-iOSUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B23693BB5C7E0ACAE216D7EB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VoiceAssistant-iOSTests/Pods-VoiceAssistant-iOSTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA4BA3DC90C310E5F379335E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VoiceAssistant-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D202856B5ED06568FD298487 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VoiceAssistant-iOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED8719E3E3B6DD94543A511F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VoiceAssistant-iOSUITests/Pods-VoiceAssistant-iOSUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD8285D308E534626A77BBAA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VoiceAssistant-iOS/Pods-VoiceAssistant-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E177BE4F1FB9E52E0016E81E /* Sources */ = {
@@ -424,11 +629,13 @@
 		};
 		E177BE7C1FB9E52F0016E81E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B1B60D92DAA9A3084CF7ED8 /* Pods-VoiceAssistant-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q2CS3FBVAU;
 				INFOPLIST_FILE = "VoiceAssistant-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.horrionsoft.VoiceAssistant-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -439,11 +646,13 @@
 		};
 		E177BE7D1FB9E52F0016E81E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E12E32110F5746E3861ED53 /* Pods-VoiceAssistant-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q2CS3FBVAU;
 				INFOPLIST_FILE = "VoiceAssistant-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.horrionsoft.VoiceAssistant-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -454,6 +663,7 @@
 		};
 		E177BE7F1FB9E52F0016E81E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A4FF2213396CA77F2966C08 /* Pods-VoiceAssistant-iOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -471,6 +681,7 @@
 		};
 		E177BE801FB9E52F0016E81E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C302F9EF5BE2587CA4315A6 /* Pods-VoiceAssistant-iOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -488,6 +699,7 @@
 		};
 		E177BE821FB9E52F0016E81E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9760AACD2F835F981D147D09 /* Pods-VoiceAssistant-iOSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -504,6 +716,7 @@
 		};
 		E177BE831FB9E52F0016E81E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE00B0F03FCCF68059EC74 /* Pods-VoiceAssistant-iOSUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
