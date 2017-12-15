@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     
     var isRecording:Bool!
     
+    @IBOutlet var requestTextView: UITextView!
+    @IBOutlet var responseTextView: UITextView!
     
     @IBOutlet var startStopButtonOutlet: UIButton!
     
@@ -71,7 +73,7 @@ class ViewController: UIViewController {
             let formatSettings: [String : Any] = [AVFormatIDKey: kAudioFormatLinearPCM,
                                                   AVSampleRateKey: 16000.0,
                                                   AVNumberOfChannelsKey: 1,
-                                                  AVEncoderBitRateKey: 12800,
+                                                  AVEncoderBitRateKey: 25600,
                                                   AVLinearPCMBitDepthKey: 16,
                                                   AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue
             ]
@@ -116,8 +118,8 @@ class ViewController: UIViewController {
         print("recording ended")
         updateStartStopButtonTextLabel()
         
-        playAudioFile(FileURL: finalURL)
-        uploadFileToAzureFunction(FileURL: finalURL)
+        //playAudioFile(FileURL: finalURL)
+        uploadFileToCognitiveServices(FileURL: finalURL)
     }
     
     //Check if audio file exists, if it does play audio
@@ -145,8 +147,46 @@ class ViewController: UIViewController {
         }
     }
     
-    //MARK: Azure function uploader
-    func uploadFileToAzureFunction(FileURL: URL) {
+    //MARK: Cognitive Services uploader using Alamofire
+    func uploadFileToCognitiveServices(FileURL: URL) {
+        
+        var displayText: Any!
+        var jsonString: String!
+        
+        
+        let bingSpeechToTextURL = "https://speech.platform.bing.com/speech/recognition/interactive/cognitiveservices/v1?language=de-DE&format=simple"
+        
+        //Configure the header, documentation can be found here: https://docs.microsoft.com/en-us/azure/cognitive-services/speech/getstarted/getstartedrest?tabs=Powershell
+        let headers: HTTPHeaders = [
+            "Accept": "application/json;text/xml",
+            "Content-Type": "audio/wav; codec=audio/pcm; samplerate=16000",
+            "Ocp-Apim-Subscription-Key": "956cba529ba740d3a42e2924262c4454",
+            "Host": "speech.platform.bing.com",
+            "Transfer-Encoding": "chunked",
+            "Expect": "100-continue"
+            ]
+        
+        Alamofire.upload(FileURL, to: bingSpeechToTextURL, method: HTTPMethod.post, headers: headers).responseJSON { response in switch response.result {
+            
+        case .success(let JSON):
+                print("Success with JSON: \(JSON)")
+                
+                
+                let response = JSON as! NSDictionary
+                
+                //single out the actual speech to text conversion
+                displayText =  response.object(forKey: "DisplayText")
+                self.requestTextView.text = displayText as! String
+            
+            case .failure(let error):
+                self.showError(title: "HTTP Error", description: "Request failed with error: \(error)", buttonTitle: "OK")
+            }
+        }
+        
+
+        
+        
+        
         
     }
     
@@ -156,5 +196,5 @@ class ViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: buttonTitle, style: .default, handler: nil))
         present(alertController, animated: true, completion: nil)
     }
+    
 }
-
