@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import Alamofire
+import QuartzCore
 
 class ViewController: UIViewController {
 
@@ -19,12 +20,24 @@ class ViewController: UIViewController {
     
     var isRecording:Bool!
     
+    //Create Bing Speech API instance variables
+    
+    //Create SubscriptionKey instance variables
+    let bingSpeechSubscriptionKey = "956cba529ba740d3a42e2924262c4454"
+    
+    
+    //REST API URLs
+    let requestTokenURL = "https://api.cognitive.microsoft.com/sts/v1.0/issueToken"
+    let bingSpeechToTextURL = "https://speech.platform.bing.com/speech/recognition/interactive/cognitiveservices/v1?language=de-DE&format=simple"
+    let bingTextToSpeechURL = "https://speech.platform.bing.com/synthesize"
+    
+    
     @IBOutlet var requestTextView: UITextView!
     @IBOutlet var responseTextView: UITextView!
     
     @IBOutlet var startStopButtonOutlet: UIButton!
     
-    
+    //MARK: iOS functions
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -32,6 +45,11 @@ class ViewController: UIViewController {
         self.title = "Hal1000"
         
         isRecording = false
+        
+        //GUI setup
+        requestTextView.layer.cornerRadius = 10
+        responseTextView.layer.cornerRadius = 10
+        startStopButtonOutlet.layer.cornerRadius = 10
     }
 
     override func didReceiveMemoryWarning() {
@@ -118,79 +136,143 @@ class ViewController: UIViewController {
         print("recording ended")
         updateStartStopButtonTextLabel()
         
-        //playAudioFile(FileURL: finalURL)
-        uploadFileToCognitiveServices(FileURL: finalURL)
+        //Convert the recorded soundfile to text using Microsoft's Speech to Text API
+        bingSpeechToText(FileURL: finalURL)
     }
     
-    //Check if audio file exists, if it does play audio
-    func playAudioFile(FileURL: URL) {
+    func playAudioFile(FileData: Data) {
         
-        if FileManager.default.fileExists(atPath: FileURL.path) {
+        //Play the audio file if its contents aren't empty
+        if FileData.description != "" {
             do {
                 try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
                 try AVAudioSession.sharedInstance().setActive(true)
                 
-                player = try AVAudioPlayer(contentsOf: FileURL, fileTypeHint: AVFileType.wav.rawValue)
+                //Bing Text to Speech was set to provide .mp3 files. Bing's .wav files can't be played by AVAudioPlayer as of 12/2017
+                player = try AVAudioPlayer(data: FileData, fileTypeHint: AVFileType.mp3.rawValue)
                 
                 player.play()
                 
-                print(FileURL)
                 print("started playing")
-                
             }
             catch let error {
-                print(error.localizedDescription)
+                //AVAudioPlayer Error occured, handle it!
+                showError(title: "AVAudioPlayer Error", description: error.localizedDescription, buttonTitle: "OK")
             }
         }
         else {
+            //AVAudioPlayer Error occured, handle it!
             showError(title: "Warning!", description: "No audio response found", buttonTitle: "OK")
         }
     }
     
     //MARK: Cognitive Services uploader using Alamofire
-    func uploadFileToCognitiveServices(FileURL: URL) {
+    func bingSpeechToText(FileURL: URL) {
         
         var displayText: Any!
-        var jsonString: String!
-        
-        
-        let bingSpeechToTextURL = "https://speech.platform.bing.com/speech/recognition/interactive/cognitiveservices/v1?language=de-DE&format=simple"
         
         //Configure the header, documentation can be found here: https://docs.microsoft.com/en-us/azure/cognitive-services/speech/getstarted/getstartedrest?tabs=Powershell
-        let headers: HTTPHeaders = [
+        let header: HTTPHeaders = [
             "Accept": "application/json;text/xml",
             "Content-Type": "audio/wav; codec=audio/pcm; samplerate=16000",
-            "Ocp-Apim-Subscription-Key": "956cba529ba740d3a42e2924262c4454",
+            "Ocp-Apim-Subscription-Key": bingSpeechSubscriptionKey,
             "Host": "speech.platform.bing.com",
             "Transfer-Encoding": "chunked",
             "Expect": "100-continue"
             ]
         
-        Alamofire.upload(FileURL, to: bingSpeechToTextURL, method: HTTPMethod.post, headers: headers).responseJSON { response in switch response.result {
+        //REST API request and response handling
+        Alamofire.upload(FileURL, to: bingSpeechToTextURL, method: .post, headers: header).responseJSON { response in switch response.result {
             
         case .success(let JSON):
                 print("Success with JSON: \(JSON)")
-                
                 
                 let response = JSON as! NSDictionary
                 
                 //single out the actual speech to text conversion
                 displayText =  response.object(forKey: "DisplayText")
+                
+                //Set the TextView text property to use the converted Speech to Text string
                 self.requestTextView.text = displayText as! String
+                
+                //Now process the converted text string in LUIS to add a smart element to your app
+                //For more information visit http://LUIS.ai
+                self.processLUIS(stringToProcess: displayText as! String)
             
             case .failure(let error):
+                //HTTP Error occured, handle it!
                 self.showError(title: "HTTP Error", description: "Request failed with error: \(error)", buttonTitle: "OK")
             }
         }
-        
-
-        
-        
-        
+    }
+    
+    func processLUIS(stringToProcess: String) {
         
     }
     
-    //Error UI display helper function
+    func bingAccessTokenRequest(stringToSend: String) {
+        
+        //Get an access token. You need to do this to authorize your Bing Text to Speech request
+        
+        //REST API Header setup
+        let tokenHeader: HTTPHeaders = [
+            "Content-type": "application/x-www-form-urlencoded",
+            "Content-Length": "0",
+            "Ocp-Apim-Subscription-Key": bingSpeechSubscriptionKey,
+        ]
+        
+        //REST API request and response handling
+        Alamofire.request(requestTokenURL, method: .post, headers: tokenHeader).responseString { response in switch response.result {
+            
+            case .success(let rString) :
+                //Token request was successful
+                print("Token request was successful")
+                self.bingTextToSpeech(stringToConvert: stringToSend, accessToken: rString)
+            
+            case .failure(let error):
+                //HTTP Error occured, handle it!
+                self.showError(title: "HTTP Error", description: "Request failed with error: \(error)", buttonTitle: "OK")
+            }
+        }
+    }
+    
+    func bingTextToSpeech(stringToConvert: String, accessToken: String) {
+        
+        //REST API Header setup
+        let textToSpeechHeader: HTTPHeaders = [
+            "X-Microsoft-OutputFormat": "audio-16khz-128kbitrate-mono-mp3",
+            "Content-Type": "text/plain",
+            "Host": "speech.platform.bing.com",
+            "Authorization": "Bearer " + accessToken,
+            ]
+        
+        var request = URLRequest(url: URL(string: bingTextToSpeechURL)!)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.allHTTPHeaderFields = textToSpeechHeader
+        
+        //REST API custom body setup
+        let body: String = "<speak version='1.0' xml:lang='en-US'><voice xml:lang='en-US' xml:gender='Male' name='Microsoft Server Speech Text to Speech Voice (de-DE, Stefan, Apollo)'>" + stringToConvert + "</voice></speak>"
+        
+        let data = (body.data(using: .utf8))! as Data
+        
+        request.httpBody = data
+        
+        //REST API request and response handling
+        Alamofire.request(request).responseData { response in switch response.result {
+
+            case .success(let audioData) :
+                //Text to Speech conversion was successful, play file
+                self.playAudioFile(FileData: audioData)
+                
+            case .failure(let error):
+                //HTTP Error occured, handle it!
+                print(error)
+                self.showError(title: "HTTP Error", description: "Request failed with error: \(error)", buttonTitle: "OK")
+            }
+    }
+}
+    
+    //Error UI display helper function using a UIAlertController
     func showError(title: String, description: String, buttonTitle: String) {
         let alertController = UIAlertController(title: title, message: description, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: buttonTitle, style: .default, handler: nil))

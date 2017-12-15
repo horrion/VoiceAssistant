@@ -12,11 +12,12 @@
 		E1163ED31FDEC1960072DF48 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1163ED21FDEC1960072DF48 /* AVFoundation.framework */; };
 		E177BE571FB9E52F0016E81E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E177BE561FB9E52F0016E81E /* AppDelegate.swift */; };
 		E177BE591FB9E52F0016E81E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E177BE581FB9E52F0016E81E /* ViewController.swift */; };
-		E177BE5C1FB9E52F0016E81E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E177BE5A1FB9E52F0016E81E /* Main.storyboard */; };
+		E177BE5C1FB9E52F0016E81E /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E177BE5A1FB9E52F0016E81E /* iPad.storyboard */; };
 		E177BE5E1FB9E52F0016E81E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E177BE5D1FB9E52F0016E81E /* Assets.xcassets */; };
 		E177BE611FB9E52F0016E81E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E177BE5F1FB9E52F0016E81E /* LaunchScreen.storyboard */; };
 		E177BE6C1FB9E52F0016E81E /* VoiceAssistant_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E177BE6B1FB9E52F0016E81E /* VoiceAssistant_iOSTests.swift */; };
 		E177BE771FB9E52F0016E81E /* VoiceAssistant_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E177BE761FB9E52F0016E81E /* VoiceAssistant_iOSUITests.swift */; };
+		E1B85CCE1FE43C0000C3A4E4 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B85CCD1FE43C0000C3A4E4 /* iPhone.storyboard */; };
 		F49B52DCE6F89D8D558E8C9C /* Pods_VoiceAssistant_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABA1973BE486294A48C2E84E /* Pods_VoiceAssistant_iOSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +53,7 @@
 		E177BE531FB9E52F0016E81E /* VoiceAssistant-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VoiceAssistant-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E177BE561FB9E52F0016E81E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E177BE581FB9E52F0016E81E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E177BE5B1FB9E52F0016E81E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E177BE5B1FB9E52F0016E81E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPad.storyboard; sourceTree = "<group>"; };
 		E177BE5D1FB9E52F0016E81E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E177BE601FB9E52F0016E81E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E177BE621FB9E52F0016E81E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 		E177BE721FB9E52F0016E81E /* VoiceAssistant-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VoiceAssistant-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E177BE761FB9E52F0016E81E /* VoiceAssistant_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceAssistant_iOSUITests.swift; sourceTree = "<group>"; };
 		E177BE781FB9E52F0016E81E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1B85CCD1FE43C0000C3A4E4 /* iPhone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +147,8 @@
 			children = (
 				E177BE561FB9E52F0016E81E /* AppDelegate.swift */,
 				E177BE581FB9E52F0016E81E /* ViewController.swift */,
-				E177BE5A1FB9E52F0016E81E /* Main.storyboard */,
+				E177BE5A1FB9E52F0016E81E /* iPad.storyboard */,
+				E1B85CCD1FE43C0000C3A4E4 /* iPhone.storyboard */,
 				E177BE5D1FB9E52F0016E81E /* Assets.xcassets */,
 				E177BE5F1FB9E52F0016E81E /* LaunchScreen.storyboard */,
 				E177BE621FB9E52F0016E81E /* Info.plist */,
@@ -289,7 +292,8 @@
 			files = (
 				E177BE611FB9E52F0016E81E /* LaunchScreen.storyboard in Resources */,
 				E177BE5E1FB9E52F0016E81E /* Assets.xcassets in Resources */,
-				E177BE5C1FB9E52F0016E81E /* Main.storyboard in Resources */,
+				E177BE5C1FB9E52F0016E81E /* iPad.storyboard in Resources */,
+				E1B85CCE1FE43C0000C3A4E4 /* iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,12 +505,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E177BE5A1FB9E52F0016E81E /* Main.storyboard */ = {
+		E177BE5A1FB9E52F0016E81E /* iPad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E177BE5B1FB9E52F0016E81E /* Base */,
 			);
-			name = Main.storyboard;
+			name = iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		E177BE5F1FB9E52F0016E81E /* LaunchScreen.storyboard */ = {
