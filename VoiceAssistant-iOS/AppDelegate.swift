@@ -16,6 +16,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        var vc: UIViewController
+        
+        let iPhone = UIStoryboard(name: "iPhone", bundle: Bundle.main)
+        let iPad = UIStoryboard(name: "iPad", bundle: Bundle.main)
+        
+        
+        if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.phone {
+            //iPhone
+            vc = iPhone.instantiateInitialViewController()!
+            
+            print("iPhone detected")
+        } else {
+            //iPad
+            vc = iPad.instantiateInitialViewController()!
+            
+            print("iPad detected")
+        }
+        
+        self.window?.rootViewController = vc
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 
