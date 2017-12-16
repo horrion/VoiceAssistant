@@ -38,3 +38,7 @@ The app should now compile.
 
 Note: Please use VoiceAssistant-iOS.xcworkspace only. 
 VoiceAssistant-iOS.xcodeproj doesn't include CocoaPods and will therefore not work. 
+
+## Deploying LUIS.ai model
+The model information is located in VoiceAssistantDemo.json. 
+Visit [LUIS](https://luis.ai) and click "import new app". 

@@ -1,0 +1,328 @@
+{
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.1",
+  "name": "VoiceAssistantDemo",
+  "desc": "",
+  "culture": "de-de",
+  "intents": [
+    {
+      "name": "Facebook"
+    },
+    {
+      "name": "favoriteMusic"
+    },
+    {
+      "name": "GoogleMaps"
+    },
+    {
+      "name": "Hello"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "ShowDate"
+    },
+    {
+      "name": "ShowTime"
+    },
+    {
+      "name": "twitter"
+    },
+    {
+      "name": "Weather"
+    }
+  ],
+  "entities": [
+    {
+      "name": "location"
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "bing_entities": [
+    "temperature"
+  ],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "hallo",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "hey",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "guten abend",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "guten tag",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "wie spät ist es",
+      "intent": "ShowTime",
+      "entities": []
+    },
+    {
+      "text": "wie viel uhr haben wir",
+      "intent": "ShowTime",
+      "entities": []
+    },
+    {
+      "text": "guten morgen",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "guten mittag",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "wie wird das wetter morgen?",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "willkommen",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "was ist die uhrzeit",
+      "intent": "ShowTime",
+      "entities": []
+    },
+    {
+      "text": "wie viel uhr ist es",
+      "intent": "ShowTime",
+      "entities": []
+    },
+    {
+      "text": "regnet es heute?",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "brauche ich einen regenschirm?",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "guten nachmittag",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "welches datum ist heute?",
+      "intent": "ShowDate",
+      "entities": []
+    },
+    {
+      "text": "öffne die karte",
+      "intent": "GoogleMaps",
+      "entities": []
+    },
+    {
+      "text": "ist es warm?",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "wie viel grad ist es?",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "wird es schnee geben?",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "wann ist wieder montag?",
+      "intent": "ShowDate",
+      "entities": []
+    },
+    {
+      "text": "welcher wochentag ist morgen?",
+      "intent": "ShowDate",
+      "entities": []
+    },
+    {
+      "text": "in welchem monat befinden wir uns?",
+      "intent": "ShowDate",
+      "entities": []
+    },
+    {
+      "text": "ist es warm",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "wird es warm",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "was ist deine lieblingsmusik",
+      "intent": "favoriteMusic",
+      "entities": []
+    },
+    {
+      "text": "was ist dein lieblings song",
+      "intent": "favoriteMusic",
+      "entities": []
+    },
+    {
+      "text": "welche musik magst du",
+      "intent": "favoriteMusic",
+      "entities": []
+    },
+    {
+      "text": "was ist dein lieblings lied",
+      "intent": "favoriteMusic",
+      "entities": []
+    },
+    {
+      "text": "welches lied hörst du gerne",
+      "intent": "favoriteMusic",
+      "entities": []
+    },
+    {
+      "text": "welche lieder hörst du gerne",
+      "intent": "favoriteMusic",
+      "entities": []
+    },
+    {
+      "text": "öffne facebook",
+      "intent": "Facebook",
+      "entities": []
+    },
+    {
+      "text": "ich will facebook sehen",
+      "intent": "Facebook",
+      "entities": []
+    },
+    {
+      "text": "ich will facebook öffnen",
+      "intent": "Facebook",
+      "entities": []
+    },
+    {
+      "text": "ich möchte etwas auf facebook sehen",
+      "intent": "Facebook",
+      "entities": []
+    },
+    {
+      "text": "facebook",
+      "intent": "Facebook",
+      "entities": []
+    },
+    {
+      "text": "mach facebook auf",
+      "intent": "Facebook",
+      "entities": []
+    },
+    {
+      "text": "mache facebook auf",
+      "intent": "Facebook",
+      "entities": []
+    },
+    {
+      "text": "öffne twitter",
+      "intent": "twitter",
+      "entities": []
+    },
+    {
+      "text": "mache twitter auf",
+      "intent": "twitter",
+      "entities": []
+    },
+    {
+      "text": "ich möchte twitter sehen",
+      "intent": "twitter",
+      "entities": []
+    },
+    {
+      "text": "ich möchte twitter benutzen",
+      "intent": "twitter",
+      "entities": []
+    },
+    {
+      "text": "ich will twitter aufmachen",
+      "intent": "twitter",
+      "entities": []
+    },
+    {
+      "text": "ich will twitter benutzen",
+      "intent": "twitter",
+      "entities": []
+    },
+    {
+      "text": "ich möchte twitter aufmachen",
+      "intent": "twitter",
+      "entities": []
+    },
+    {
+      "text": "welches jahr ist gerade?",
+      "intent": "ShowDate",
+      "entities": []
+    },
+    {
+      "text": "in welchem jahr befinden wir uns",
+      "intent": "ShowDate",
+      "entities": []
+    },
+    {
+      "text": "öffne google maps",
+      "intent": "GoogleMaps",
+      "entities": []
+    },
+    {
+      "text": "zeige die route nach spanien an",
+      "intent": "GoogleMaps",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 21,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "ich möchte nach spanien",
+      "intent": "GoogleMaps",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 16,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "suche nach pizza in meiner umgebung",
+      "intent": "GoogleMaps",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 11,
+          "endPos": 15
+        }
+      ]
+    }
+  ]
+}
