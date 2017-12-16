@@ -11,7 +11,7 @@ import AVFoundation
 import Alamofire
 import QuartzCore
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AVAudioPlayerDelegate  {
 
     //Create AVFoundation instance variables
     var recorder:AVAudioRecorder!
@@ -24,12 +24,18 @@ class ViewController: UIViewController {
     
     //Create SubscriptionKey instance variables
     let bingSpeechSubscriptionKey = "956cba529ba740d3a42e2924262c4454"
+    //let luisSubscriptionKey = "239012ab976940c5801704e01b84a46d"
+    let luisSubscriptionKey = "41efade9c3004506a51b9ba734458b0d"
     
+    //LUIS Intent
+    var luisIntent: String!
     
     //REST API URLs
     let requestTokenURL = "https://api.cognitive.microsoft.com/sts/v1.0/issueToken"
     let bingSpeechToTextURL = "https://speech.platform.bing.com/speech/recognition/interactive/cognitiveservices/v1?language=de-DE&format=simple"
     let bingTextToSpeechURL = "https://speech.platform.bing.com/synthesize"
+    let luisURL = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/e747ba8d-ac95-45b8-9807-5aba7aa17610?subscription-key=41efade9c3004506a51b9ba734458b0d&verbose=true&timezoneOffset=60"
+    
     
     
     @IBOutlet var requestTextView: UITextView!
@@ -150,6 +156,7 @@ class ViewController: UIViewController {
                 
                 //Bing Text to Speech was set to provide .mp3 files. Bing's .wav files can't be played by AVAudioPlayer as of 12/2017
                 player = try AVAudioPlayer(data: FileData, fileTypeHint: AVFileType.mp3.rawValue)
+                player.delegate = self
                 
                 player.play()
                 
@@ -208,6 +215,34 @@ class ViewController: UIViewController {
     
     func processLUIS(stringToProcess: String) {
         
+        let parameters: Parameters = [
+            "q": stringToProcess
+        ]
+        
+        //REST API request and response handling
+        Alamofire.request(luisURL, method: .get, parameters: parameters).responseJSON { response in
+            switch response.result {
+                
+            case .success(let JSON):
+                print("Success with JSON: \(JSON)")
+                
+                let response = JSON as! NSDictionary
+                
+                //single out the actual intent through nested keypaths
+                let intent = response.value(forKeyPath: "topScoringIntent.intent")
+                
+                let intentString = intent as! String
+                print(intentString)
+                
+                self.localIntentProcessor(intent: intentString)
+                
+                
+            case .failure(let error):
+                //HTTP Error occured, handle it!
+                //self.showError(title: "HTTP Error", description: "Request failed with error: \(error)", buttonTitle: "OK")
+                print(error)
+            }
+        }
     }
     
     func bingAccessTokenRequest(stringToSend: String) {
@@ -272,6 +307,8 @@ class ViewController: UIViewController {
     }
 }
     
+    //MARK: Swift helper
+    
     //Error UI display helper function using a UIAlertController
     func showError(title: String, description: String, buttonTitle: String) {
         let alertController = UIAlertController(title: title, message: description, preferredStyle: .alert)
@@ -279,4 +316,141 @@ class ViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    func weekdayHelper(Weekday: Int) -> String {
+        switch Weekday {
+        case 1:
+            return "Sonntag"
+        case 2:
+            return "Montag"
+        case 3:
+            return "Dienstag"
+        case 4:
+            return "Mittwoch"
+        case 5:
+            return "Donnerstag"
+        case 6:
+            return "Freitag"
+        case 7:
+            return "Samstag"
+        default:
+            return "Montag"
+        }
+    }
+    
+    func localIntentProcessor(intent: String) {
+        
+        var ttsResponse: String
+        
+        switch intent {
+        case "None":
+            ttsResponse = "Ich konnte dich leider nicht verstehen"
+            bingAccessTokenRequest(stringToSend: ttsResponse)
+            
+        case "favoriteMusic":
+            ttsResponse = "Hier ist mein Lieblingslied"
+            bingAccessTokenRequest(stringToSend: ttsResponse)
+            
+        case "Weather":
+            ttsResponse = "Hier ist das Wetter"
+            bingAccessTokenRequest(stringToSend: ttsResponse)
+            
+        case "Hello":
+            ttsResponse = "Hallo Azure Meetup Köln!"
+            bingAccessTokenRequest(stringToSend: ttsResponse)
+            
+        case "ShowTime":
+            let date = Date()
+            let calendar = Calendar.current
+            let hour = calendar.component(.hour, from: date)
+            let minutes = calendar.component(.minute, from: date)
+            
+            ttsResponse = "Es ist 18 Uhr. Du darfst jetzt nach hause gehen. Spaß beiseite. " +
+                "Es ist " + String(hour) + " Uhr " + String(minutes)
+            bingAccessTokenRequest(stringToSend: ttsResponse)
+            
+        case "ShowDate":
+            let date = Date()
+            let calendar = Calendar.current
+            let day = calendar.component(.day, from: date)
+            let month = calendar.component(.month, from: date)
+            let year = calendar.component(.year, from: date)
+            
+            let weekday = calendar.component(.weekday, from: date)
+            
+            let weekdayString = weekdayHelper(Weekday: weekday)
+            
+            ttsResponse = "Heute ist " + weekdayString + " der " + String(day) + "." + String(month) + "." + String(year)
+            bingAccessTokenRequest(stringToSend: ttsResponse)
+            
+        case "Facebook":
+            ttsResponse = "Hier ist Facebook"
+            bingAccessTokenRequest(stringToSend: ttsResponse)
+            
+        case "twitter":
+            ttsResponse = "Hier ist twitter"
+            bingAccessTokenRequest(stringToSend: ttsResponse)
+            
+        case "GoogleMaps":
+            ttsResponse = "Einen Moment..."
+            bingAccessTokenRequest(stringToSend: ttsResponse)
+            
+        default:
+            ttsResponse = "Ich konnte dich leider nicht verstehen"
+            bingAccessTokenRequest(stringToSend: ttsResponse)
+        }
+        luisIntent = intent
+        //Set the TextView text property to use the converted Speech to Text string
+        self.responseTextView.text = ttsResponse
+    }
+    
+    //MARK: Delegates
+    
+    //Use audioPlayerDidFinishPlaying to carry out actions after the audio file has been played
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        if flag {
+            let luisLocal = luisIntent
+            
+            switch luisLocal {
+                
+                case "favoriteMusic"?:
+                    if let url = URL(string: "https://www.youtube.com/watch?v=VLFx30Ijiq0") {
+                        UIApplication.shared.open(url, options: [:])
+                }
+                
+                case "Weather"?:
+                    if let url = URL(string: "http://www.wetter.com") {
+                        UIApplication.shared.open(url, options: [:])
+                }
+                
+                case "Facebook"?:
+                    let facebookUrl = URL(string: "fb://feed")
+                    if UIApplication.shared.canOpenURL(facebookUrl!) {
+                        UIApplication.shared.open(facebookUrl!)
+                    } else {
+                        //Redirect to Safari if native app isn't installed
+                        UIApplication.shared.open(URL(string: "http://facebook.com/")!)
+                }
+                
+                case "twitter"?:
+                    let twitterUrl = URL(string: "twitter://")
+                    if UIApplication.shared.canOpenURL(twitterUrl!) {
+                        UIApplication.shared.open(twitterUrl!)
+                    } else {
+                        //Redirect to Safari if native app isn't installed
+                        UIApplication.shared.open(URL(string: "http://twitter.com/")!)
+                }
+                
+                case "GoogleMaps"?:
+                        let gMapsUrl = URL(string: "comgooglemaps://?q=")
+                        if UIApplication.shared.canOpenURL(gMapsUrl!) {
+                            UIApplication.shared.open(gMapsUrl!)
+                        } else {
+                            //Redirect to Safari if native app isn't installed
+                            UIApplication.shared.open(URL(string: "http://maps.google.com/")!)
+                        }
+                
+            default: print("String luisIntent == nil")
+            }
+        }
+    }
 }
