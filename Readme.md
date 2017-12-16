@@ -5,7 +5,9 @@ Meet Hal, my custom Voice Assistant.
 Alamofire was used to make REST API calls easier and avoid boilerplate code
 
 Bing Speech-to-Text
+
 [LUIS](https://luis.ai)
+
 Bing Text-to-Speech
 
 Were used for audio processing
