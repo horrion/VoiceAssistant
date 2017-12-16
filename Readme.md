@@ -31,7 +31,6 @@ Once CocoaPods is installed, execute
 
 Open VoiceAssistant-iOS.xcworkspace
 
-Set the MainInterface under Target Deployment info to "iPhone" or "iPad". 
 Provide a Team under Target Signing
 
 The app should now compile. 
