@@ -40,5 +40,7 @@ Visit [LUIS](https://luis.ai) and click "import new app".
 
 ## To-Do's
 -Create english LUIS model
+
 -Replace LUIS URL with App ID and subscription Key
+
 -Fix Start/Stop button Outlet
