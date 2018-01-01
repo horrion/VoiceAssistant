@@ -9,10 +9,10 @@ Meet Hal, my custom Voice Assistant.
 [Bing Text-to-Speech](https://azure.microsoft.com/en-us/services/cognitive-services/speech/) were used for audio processing
 
 ## Compiling the App
-If you're using this app within 2 days of attending one of my talks the provided Azure subscription keys will work. 
-Otherwise you'll have to use your own subscription keys. Subscription keys can be generated here:  https://portal.azure.com
+If you're using this app within 2 days of attending one of my talks the provided Azure subscription keys and LUIS URL will work. 
+Otherwise you'll have to use your own subscription keys and LUIS URL. Subscription keys can be generated here:  [Azure Portal](https://portal.azure.com), a LUIS URL can be generated here: [LUIS](https://luis.ai). 
 
-The subscription key constants can be found in the top section of ViewController.swift. 
+The subscription key and LUIS URL constants can be found in the top section of ViewController.swift. 
 
 Before you can compile the app, you'll need to install Alamofire. Using CocoaPods to do so is highly recommended. 
 
@@ -25,15 +25,20 @@ Once CocoaPods is installed, execute
 
 `pod install`
 
-Open VoiceAssistant-iOS.xcworkspace
+Open `VoiceAssistant-iOS.xcworkspace`
 
 Provide a Team under Target Signing
 
 The app should now compile. 
 
-Note: Please use VoiceAssistant-iOS.xcworkspace only. 
-VoiceAssistant-iOS.xcodeproj doesn't include CocoaPods and will therefore not work. 
+Note: Please use `VoiceAssistant-iOS.xcworkspace` only. 
+`VoiceAssistant-iOS.xcodeproj` doesn't include CocoaPods and will therefore not work. 
 
 ## Deploying LUIS.ai model
-The model information is located in `VoiceAssistantDemo.json`. 
+The model information is located in `VoiceAssistantDemo.json` in each respective language's folder in the folder `LUIS`. 
 Visit [LUIS](https://luis.ai) and click "import new app". 
+
+##To-Do's
+-Create english LUIS model
+-Replace LUIS URL with App ID and subscription Key
+-Fix Start/Stop button Outlet

@@ -23,9 +23,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
     //Create Bing Speech API instance variables
     
     //Create SubscriptionKey instance variables
-    let bingSpeechSubscriptionKey = "956cba529ba740d3a42e2924262c4454"
-    //let luisSubscriptionKey = "239012ab976940c5801704e01b84a46d"
-    let luisSubscriptionKey = "41efade9c3004506a51b9ba734458b0d"
+    let bingSpeechSubscriptionKey = ""
+    let luisSubscriptionKey = ""
     
     //LUIS Intent
     var luisIntent: String!
@@ -34,7 +33,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
     let requestTokenURL = "https://api.cognitive.microsoft.com/sts/v1.0/issueToken"
     let bingSpeechToTextURL = "https://speech.platform.bing.com/speech/recognition/interactive/cognitiveservices/v1?language=de-DE&format=simple"
     let bingTextToSpeechURL = "https://speech.platform.bing.com/synthesize"
-    let luisURL = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/e747ba8d-ac95-45b8-9807-5aba7aa17610?subscription-key=41efade9c3004506a51b9ba734458b0d&verbose=true&timezoneOffset=60"
+    let luisURL = ""
     
     
     
@@ -357,7 +356,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
             bingAccessTokenRequest(stringToSend: ttsResponse)
             
         case "Hello":
-            ttsResponse = "Hallo Azure Meetup Köln!"
+            ttsResponse = "Hallo!"
             bingAccessTokenRequest(stringToSend: ttsResponse)
             
         case "ShowTime":
@@ -366,8 +365,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
             let hour = calendar.component(.hour, from: date)
             let minutes = calendar.component(.minute, from: date)
             
-            ttsResponse = "Es ist 18 Uhr. Du darfst jetzt nach hause gehen. Spaß beiseite. " +
-                "Es ist " + String(hour) + " Uhr " + String(minutes)
+            ttsResponse = "Es ist " + String(hour) + " Uhr " + String(minutes)
             bingAccessTokenRequest(stringToSend: ttsResponse)
             
         case "ShowDate":
