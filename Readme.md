@@ -38,7 +38,7 @@ Note: Please use `VoiceAssistant-iOS.xcworkspace` only.
 The model information is located in `VoiceAssistantDemo.json` in each respective language's folder in the folder `LUIS`. 
 Visit [LUIS](https://luis.ai) and click "import new app". 
 
-##To-Do's
+## To-Do's
 -Create english LUIS model
 -Replace LUIS URL with App ID and subscription Key
 -Fix Start/Stop button Outlet
