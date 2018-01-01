@@ -2,23 +2,19 @@
 Meet Hal, my custom Voice Assistant. 
 
 ## Library & API Usage
-Alamofire was used to make REST API calls easier and avoid boilerplate code
+[Alamofire](https://github.com/Alamofire/Alamofire) was used to make REST API calls easier and avoid boilerplate code
 
-Bing Speech-to-Text
-
-[LUIS](https://luis.ai)
-
-Bing Text-to-Speech
-
-Were used for audio processing
+[Bing Speech-to-Text](https://azure.microsoft.com/en-us/services/cognitive-services/speech/), 
+[LUIS](https://luis.ai) & 
+[Bing Text-to-Speech](https://azure.microsoft.com/en-us/services/cognitive-services/speech/) were used for audio processing
 
 ## Compiling the App
 If you're using this app within 2 days of attending one of my talks the provided Azure subscription keys will work. 
-Otherwise you'll have to use your own subscription keys. Subscription keys can be generated on https://portal.azure.com
+Otherwise you'll have to use your own subscription keys. Subscription keys can be generated here:  https://portal.azure.com
 
 The subscription key constants can be found in the top section of ViewController.swift. 
 
-Before you can compile the app, you'll need to install Alamofire. Using CocoaPods is highly recommended. 
+Before you can compile the app, you'll need to install Alamofire. Using CocoaPods to do so is highly recommended. 
 
 Use terminal to execute the following commands: 
 if Cocoapods isn't installed or you're not sure, execute

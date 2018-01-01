@@ -111,6 +111,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
             print("recording permission == true")
             
             updateStartStopButtonTextLabel()
+            startStopButtonOutlet.titleLabel?.text = "Stop"
             
         break
         case AVAudioSessionRecordPermission.denied:
@@ -141,6 +142,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
         recorder = nil
         print("recording ended")
         updateStartStopButtonTextLabel()
+        startStopButtonOutlet.titleLabel?.text = "Start"
         
         //Convert the recorded soundfile to text using Microsoft's Speech to Text API
         bingSpeechToText(FileURL: finalURL)
@@ -286,7 +288,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
         request.allHTTPHeaderFields = textToSpeechHeader
         
         //REST API custom body setup
-        let body: String = "<speak version='1.0' xml:lang='en-US'><voice xml:lang='en-US' xml:gender='Male' name='Microsoft Server Speech Text to Speech Voice (de-DE, Stefan, Apollo)'>" + stringToConvert + "</voice></speak>"
+        let body: String = "<speak version='1.0' xml:lang='en-US'><voice xml:lang='en-US' xml:gender='Female' name='Microsoft Server Speech Text to Speech Voice (de-DE, Hedda)'>" + stringToConvert + "</voice></speak>"
         
         let data = (body.data(using: .utf8))! as Data
         
@@ -393,6 +395,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
         case "GoogleMaps":
             ttsResponse = "Einen Moment..."
             bingAccessTokenRequest(stringToSend: ttsResponse)
+        case "SnowHeight":
+            ttsResponse = "Ich suche nach der aktuellen Schneehöhe"
+            bingAccessTokenRequest(stringToSend: ttsResponse)
             
         default:
             ttsResponse = "Ich konnte dich leider nicht verstehen"
@@ -448,6 +453,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
                             //Redirect to Safari if native app isn't installed
                             UIApplication.shared.open(URL(string: "http://maps.google.com/")!)
                         }
+                case "SnowHeight"?:
+                if let url = URL(string: "https://www.schneehoehen.de/") {
+                    UIApplication.shared.open(url, options: [:])
+                }
                 
             default: print("String luisIntent == nil")
             }
