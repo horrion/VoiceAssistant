@@ -1,7 +1,7 @@
 # HAL1000
 Meet Hal, my custom Voice Assistant. 
 
-## Currently supported languages
+## Currently Supported Languages
 
 HAL1000 currently supports English and German. Feel free to add LUIS models in other languages. 
 
@@ -43,8 +43,6 @@ The model information is located in `VoiceAssistantDemo.json` in each respective
 Visit [LUIS](https://luis.ai) and click "import new app". 
 
 ## To-Do's
--Create english LUIS model
-
 -Replace LUIS URL with App ID and subscription Key
 
 -Fix Start/Stop button Outlet
