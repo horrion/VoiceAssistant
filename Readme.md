@@ -43,6 +43,8 @@ The model information is located in `VoiceAssistantDemo.json` in each respective
 Visit [LUIS](https://luis.ai) and click "import new app". 
 
 ## To-Do's
+-Add english language support to iOS App
+
 -Replace LUIS URL with App ID and subscription Key
 
 -Fix Start/Stop button Outlet
