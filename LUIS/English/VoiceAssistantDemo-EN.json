@@ -1,0 +1,448 @@
+{
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.1",
+  "name": "VoiceAssistantDemo-EN",
+  "desc": "",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "Facebook"
+    },
+    {
+      "name": "favoriteMusic"
+    },
+    {
+      "name": "GoogleMaps"
+    },
+    {
+      "name": "Hello"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "ShowDate"
+    },
+    {
+      "name": "ShowTime"
+    },
+    {
+      "name": "SnowHeight"
+    },
+    {
+      "name": "twitter"
+    },
+    {
+      "name": "Weather"
+    }
+  ],
+  "entities": [
+    {
+      "name": "location"
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "bing_entities": [],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "hello",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "what time is it",
+      "intent": "ShowTime",
+      "entities": []
+    },
+    {
+      "text": "facebook",
+      "intent": "Facebook",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "good day",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "good morning",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "good afternoon",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "good evening",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "hey",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "what's the weather like",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "is it hot",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "open facebook",
+      "intent": "Facebook",
+      "entities": []
+    },
+    {
+      "text": "go to facebook",
+      "intent": "Facebook",
+      "entities": []
+    },
+    {
+      "text": "welcome",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "what is the time",
+      "intent": "ShowTime",
+      "entities": []
+    },
+    {
+      "text": "is it raining",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "what is the current time",
+      "intent": "ShowTime",
+      "entities": []
+    },
+    {
+      "text": "do i need an umbrella",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "howdy",
+      "intent": "Hello",
+      "entities": []
+    },
+    {
+      "text": "what date is it",
+      "intent": "ShowDate",
+      "entities": []
+    },
+    {
+      "text": "twitter",
+      "intent": "twitter",
+      "entities": []
+    },
+    {
+      "text": "time",
+      "intent": "ShowTime",
+      "entities": []
+    },
+    {
+      "text": "open map",
+      "intent": "GoogleMaps",
+      "entities": []
+    },
+    {
+      "text": "map",
+      "intent": "GoogleMaps",
+      "entities": []
+    },
+    {
+      "text": "current time",
+      "intent": "ShowTime",
+      "entities": []
+    },
+    {
+      "text": "is it cold",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "open twitter",
+      "intent": "twitter",
+      "entities": []
+    },
+    {
+      "text": "is it snowing",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "is it warm",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "what's the date",
+      "intent": "ShowDate",
+      "entities": []
+    },
+    {
+      "text": "tweet",
+      "intent": "twitter",
+      "entities": []
+    },
+    {
+      "text": "what's your favorite music",
+      "intent": "favoriteMusic",
+      "entities": []
+    },
+    {
+      "text": "i want to go skiing",
+      "intent": "SnowHeight",
+      "entities": []
+    },
+    {
+      "text": "i want to go snowboarding",
+      "intent": "SnowHeight",
+      "entities": []
+    },
+    {
+      "text": "i want to use twitter",
+      "intent": "twitter",
+      "entities": []
+    },
+    {
+      "text": "what's your favorite song",
+      "intent": "favoriteMusic",
+      "entities": []
+    },
+    {
+      "text": "show me the date",
+      "intent": "ShowDate",
+      "entities": []
+    },
+    {
+      "text": "what kind of music do you like",
+      "intent": "favoriteMusic",
+      "entities": []
+    },
+    {
+      "text": "what's the weather going to be like tomorrow",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "i want to tweet",
+      "intent": "twitter",
+      "entities": []
+    },
+    {
+      "text": "is it late",
+      "intent": "ShowTime",
+      "entities": []
+    },
+    {
+      "text": "open google maps",
+      "intent": "GoogleMaps",
+      "entities": []
+    },
+    {
+      "text": "what songs do you like",
+      "intent": "favoriteMusic",
+      "entities": []
+    },
+    {
+      "text": "do i need boots",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "google maps",
+      "intent": "GoogleMaps",
+      "entities": []
+    },
+    {
+      "text": "open a map",
+      "intent": "GoogleMaps",
+      "entities": []
+    },
+    {
+      "text": "i want to open facebook",
+      "intent": "Facebook",
+      "entities": []
+    },
+    {
+      "text": "open the facebook app",
+      "intent": "Facebook",
+      "entities": []
+    },
+    {
+      "text": "i would like to open facebook",
+      "intent": "Facebook",
+      "entities": []
+    },
+    {
+      "text": "wanna facebook",
+      "intent": "Facebook",
+      "entities": []
+    },
+    {
+      "text": "i want to see something on facebook",
+      "intent": "Facebook",
+      "entities": []
+    },
+    {
+      "text": "is it freezing",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "is it getting warmer",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "do i need gloves",
+      "intent": "Weather",
+      "entities": []
+    },
+    {
+      "text": "i want to see twitter",
+      "intent": "twitter",
+      "entities": []
+    },
+    {
+      "text": "what are some of your favorite songs",
+      "intent": "favoriteMusic",
+      "entities": []
+    },
+    {
+      "text": "i'm looking for hotels around me",
+      "intent": "GoogleMaps",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 16,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "i'm looking for hotels around here",
+      "intent": "GoogleMaps",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 16,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "show me the way to spain",
+      "intent": "GoogleMaps",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 19,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "show me the route to spain",
+      "intent": "GoogleMaps",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 21,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "what year is it currently",
+      "intent": "ShowDate",
+      "entities": []
+    },
+    {
+      "text": "what year are we in",
+      "intent": "ShowDate",
+      "entities": []
+    },
+    {
+      "text": "when is the next monday",
+      "intent": "ShowDate",
+      "entities": []
+    },
+    {
+      "text": "how much snow is there in spain",
+      "intent": "SnowHeight",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 26,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "how tall is the snow in spain",
+      "intent": "SnowHeight",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 24,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "how high is the snow in spain",
+      "intent": "SnowHeight",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 24,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "i want snowboard",
+      "intent": "SnowHeight",
+      "entities": []
+    },
+    {
+      "text": "can i go skiing",
+      "intent": "SnowHeight",
+      "entities": []
+    },
+    {
+      "text": "can i go snowboarding",
+      "intent": "SnowHeight",
+      "entities": []
+    },
+    {
+      "text": "do i have to plow snow",
+      "intent": "SnowHeight",
+      "entities": []
+    },
+    {
+      "text": "can i hit the slopes",
+      "intent": "SnowHeight",
+      "entities": []
+    }
+  ]
+}

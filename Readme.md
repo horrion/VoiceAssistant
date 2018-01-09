@@ -1,6 +1,10 @@
 # HAL1000
 Meet Hal, my custom Voice Assistant. 
 
+## Currently supported languages
+
+HAL1000 currently supports English and German. Feel free to add LUIS models in other languages. 
+
 ## Library & API Usage
 [Alamofire](https://github.com/Alamofire/Alamofire) was used to make REST API calls easier and avoid boilerplate code
 
