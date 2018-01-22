@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  VoiceAssistant-iOS
+
+  Created by Robert Horrion on 1/21/18.
+  Copyright © 2018 Robert Horrion. All rights reserved.
+*/
+
+"bingSpeechRecognitionURL" = "https://speech.platform.bing.com/speech/recognition/interactive/cognitiveservices/v1?language=en-US&format=simple";
+
+"warning" = "Warning!";
+
+"microphoneWarning" = "Anna won't work without your permission to use the microphone";
+
+"avaudioplayerError" = "AVAudioPlayer Error";
+
+"ok" = "OK";
+
+"noAudioResponseFound" = "No audio response found";
+
+"audioVoice" = "<speak version='1.0' xml:lang='en-US'><voice xml:lang='en-US' xml:gender='Female' name='Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'>";
+
+"sunday" = "Sunday";
+
+"monday" = "Monday";
+
+"tuesday" = "Tuesday";
+
+"wednesday" = "Wednesday";
+
+"thursday" = "Thursday";
+
+"friday" = "Friday";
+
+"saturday" = "Saturday";
+
+"didn't_Understand" = "I'm afraid I didn't understand that";
+
+"favoriteSong" = "Here's my favorite song";
+
+"weather" = "Here's the weather";
+
+"hello" = "Hello!";
+
+"it_Is" = "It is ";
+
+"O_Clock" = ":";
+
+"today_Is" = "Today is ";
+
+"bridging_The" = ", ";
+
+"facebook" = "Here's Facebook";
+
+"twitter" = "Here's twitter";
+
+"hangOn" = "One moment, please...";
+
+"snowConditions" = "I'm looking for the current snow conditions";
+

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		51ED7D667AB2F44EA7410053 /* Pods_VoiceAssistant_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BAFB7D14730BDB9DE85DE53 /* Pods_VoiceAssistant_iOSUITests.framework */; };
+		946BA9BB2015421600979AA4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 946BA9BD2015421600979AA4 /* Localizable.strings */; };
+		94B7237C200FABA100159CB7 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94B7237E200FABA100159CB7 /* iPhone.storyboard */; };
 		A60A030460D750A3FEE22B91 /* Pods_VoiceAssistant_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172B3FD45787A734C5169E36 /* Pods_VoiceAssistant_iOS.framework */; };
 		E1163ED31FDEC1960072DF48 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1163ED21FDEC1960072DF48 /* AVFoundation.framework */; };
 		E177BE571FB9E52F0016E81E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E177BE561FB9E52F0016E81E /* AppDelegate.swift */; };
@@ -17,7 +19,6 @@
 		E177BE611FB9E52F0016E81E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E177BE5F1FB9E52F0016E81E /* LaunchScreen.storyboard */; };
 		E177BE6C1FB9E52F0016E81E /* VoiceAssistant_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E177BE6B1FB9E52F0016E81E /* VoiceAssistant_iOSTests.swift */; };
 		E177BE771FB9E52F0016E81E /* VoiceAssistant_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E177BE761FB9E52F0016E81E /* VoiceAssistant_iOSUITests.swift */; };
-		E1B85CCE1FE43C0000C3A4E4 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B85CCD1FE43C0000C3A4E4 /* iPhone.storyboard */; };
 		F49B52DCE6F89D8D558E8C9C /* Pods_VoiceAssistant_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABA1973BE486294A48C2E84E /* Pods_VoiceAssistant_iOSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,12 @@
 		2BAFB7D14730BDB9DE85DE53 /* Pods_VoiceAssistant_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoiceAssistant_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A4FF2213396CA77F2966C08 /* Pods-VoiceAssistant-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceAssistant-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceAssistant-iOSTests/Pods-VoiceAssistant-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E12E32110F5746E3861ED53 /* Pods-VoiceAssistant-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceAssistant-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceAssistant-iOS/Pods-VoiceAssistant-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		946BA9B620153FD300979AA4 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/iPad.storyboard; sourceTree = "<group>"; };
+		946BA9B720153FD300979AA4 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/iPhone.storyboard; sourceTree = "<group>"; };
+		946BA9B820153FD300979AA4 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		946BA9BC2015421600979AA4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		946BA9BE2015421900979AA4 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		94B7237D200FABA100159CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPhone.storyboard; sourceTree = "<group>"; };
 		9760AACD2F835F981D147D09 /* Pods-VoiceAssistant-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceAssistant-iOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceAssistant-iOSUITests/Pods-VoiceAssistant-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ABA1973BE486294A48C2E84E /* Pods_VoiceAssistant_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoiceAssistant_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1163ED01FDEC0EA0072DF48 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
@@ -63,7 +70,6 @@
 		E177BE721FB9E52F0016E81E /* VoiceAssistant-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VoiceAssistant-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E177BE761FB9E52F0016E81E /* VoiceAssistant_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceAssistant_iOSUITests.swift; sourceTree = "<group>"; };
 		E177BE781FB9E52F0016E81E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E1B85CCD1FE43C0000C3A4E4 /* iPhone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,8 +153,9 @@
 			children = (
 				E177BE561FB9E52F0016E81E /* AppDelegate.swift */,
 				E177BE581FB9E52F0016E81E /* ViewController.swift */,
+				946BA9BD2015421600979AA4 /* Localizable.strings */,
 				E177BE5A1FB9E52F0016E81E /* iPad.storyboard */,
-				E1B85CCD1FE43C0000C3A4E4 /* iPhone.storyboard */,
+				94B7237E200FABA100159CB7 /* iPhone.storyboard */,
 				E177BE5D1FB9E52F0016E81E /* Assets.xcassets */,
 				E177BE5F1FB9E52F0016E81E /* LaunchScreen.storyboard */,
 				E177BE621FB9E52F0016E81E /* Info.plist */,
@@ -272,6 +279,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = E177BE4A1FB9E52E0016E81E;
 			productRefGroup = E177BE541FB9E52F0016E81E /* Products */;
@@ -290,10 +298,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				946BA9BB2015421600979AA4 /* Localizable.strings in Resources */,
 				E177BE611FB9E52F0016E81E /* LaunchScreen.storyboard in Resources */,
 				E177BE5E1FB9E52F0016E81E /* Assets.xcassets in Resources */,
 				E177BE5C1FB9E52F0016E81E /* iPad.storyboard in Resources */,
-				E1B85CCE1FE43C0000C3A4E4 /* iPhone.storyboard in Resources */,
+				94B7237C200FABA100159CB7 /* iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,10 +514,29 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		946BA9BD2015421600979AA4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				946BA9BC2015421600979AA4 /* en */,
+				946BA9BE2015421900979AA4 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		94B7237E200FABA100159CB7 /* iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94B7237D200FABA100159CB7 /* Base */,
+				946BA9B720153FD300979AA4 /* de */,
+			);
+			name = iPhone.storyboard;
+			sourceTree = "<group>";
+		};
 		E177BE5A1FB9E52F0016E81E /* iPad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E177BE5B1FB9E52F0016E81E /* Base */,
+				946BA9B620153FD300979AA4 /* de */,
 			);
 			name = iPad.storyboard;
 			sourceTree = "<group>";
@@ -517,6 +545,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E177BE601FB9E52F0016E81E /* Base */,
+				946BA9B820153FD300979AA4 /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -528,6 +557,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -585,6 +615,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -637,7 +668,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q2CS3FBVAU;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "VoiceAssistant-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -654,7 +685,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q2CS3FBVAU;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "VoiceAssistant-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -31,7 +31,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
     
     //REST API URLs
     let requestTokenURL = "https://api.cognitive.microsoft.com/sts/v1.0/issueToken"
-    let bingSpeechToTextURL = "https://speech.platform.bing.com/speech/recognition/interactive/cognitiveservices/v1?language=de-DE&format=simple"
+    let bingSpeechToTextURL = NSLocalizedString("bingSpeechRecognitionURL", comment: "")
     let bingTextToSpeechURL = "https://speech.platform.bing.com/synthesize"
     let luisURL = ""
     
@@ -47,7 +47,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.title = "Hal1000"
+        self.title = "Anna"
         
         isRecording = false
         
@@ -66,19 +66,15 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
         if isRecording {
             //Stop the recording
             stopRecording()
+            
+            //Set the Button's TextLabel to "Start" if no audio is being recorded
+            startStopButtonOutlet.titleLabel?.text = "Start"
         } else {
             //Start the recording
             captureWAVAudio()
-        }
-    }
-    
-    func updateStartStopButtonTextLabel() {
-        if isRecording {
+            
             //Set the Button's TextLabel to "Stop" if audio is being recorded
             startStopButtonOutlet.titleLabel?.text = "Stop"
-        } else {
-            //Set the Button's TextLabel to "Start" if no audio is being recorded
-            startStopButtonOutlet.titleLabel?.text = "Start"
         }
     }
     
@@ -109,13 +105,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
             isRecording = true
             print("recording permission == true")
             
-            updateStartStopButtonTextLabel()
-            startStopButtonOutlet.titleLabel?.text = "Stop"
-            
         break
         case AVAudioSessionRecordPermission.denied:
             //Permission was denied
-            self.showError(title: "Warning!", description: "Hal won't work without your permission to use the microphone", buttonTitle: "OK")
+            self.showError(title: NSLocalizedString("warning", comment: ""), description: NSLocalizedString("microphoneWarning", comment: ""), buttonTitle: NSLocalizedString("ok", comment: ""))
         
         break
         case AVAudioSessionRecordPermission.undetermined:
@@ -127,7 +120,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
                     self.captureWAVAudio()
                     print("recording started")
                 } else {
-                    self.showError(title: "Warning!", description: "Hal won't work without your permission to use the microphone", buttonTitle: "OK")
+                    self.showError(title: NSLocalizedString("warning", comment: ""), description: NSLocalizedString("microphoneWarning", comment: ""), buttonTitle: NSLocalizedString("ok", comment: ""))
                 }
                 }
             }
@@ -140,8 +133,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
         isRecording = false
         recorder = nil
         print("recording ended")
-        updateStartStopButtonTextLabel()
-        startStopButtonOutlet.titleLabel?.text = "Start"
         
         //Convert the recorded soundfile to text using Microsoft's Speech to Text API
         bingSpeechToText(FileURL: finalURL)
@@ -165,12 +156,12 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
             }
             catch let error {
                 //AVAudioPlayer Error occured, handle it!
-                showError(title: "AVAudioPlayer Error", description: error.localizedDescription, buttonTitle: "OK")
+                showError(title: NSLocalizedString("avaudioplayerError", comment: ""), description: error.localizedDescription, buttonTitle: NSLocalizedString("ok", comment: ""))
             }
         }
         else {
             //AVAudioPlayer Error occured, handle it!
-            showError(title: "Warning!", description: "No audio response found", buttonTitle: "OK")
+            showError(title: NSLocalizedString("warning", comment: ""), description: NSLocalizedString("noAudioResponseFound", comment: ""), buttonTitle: NSLocalizedString("ok", comment: ""))
         }
     }
     
@@ -273,6 +264,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
     }
     
     func bingTextToSpeech(stringToConvert: String, accessToken: String) {
+        //Documentation can be found here: https://docs.microsoft.com/en-us/azure/cognitive-services/speech/api-reference-rest/bingvoiceoutput
         
         //REST API Header setup
         let textToSpeechHeader: HTTPHeaders = [
@@ -287,7 +279,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
         request.allHTTPHeaderFields = textToSpeechHeader
         
         //REST API custom body setup
-        let body: String = "<speak version='1.0' xml:lang='en-US'><voice xml:lang='en-US' xml:gender='Female' name='Microsoft Server Speech Text to Speech Voice (de-DE, Hedda)'>" + stringToConvert + "</voice></speak>"
+        let body: String = NSLocalizedString("audioVoice", comment: "") + stringToConvert + "</voice></speak>"
         
         let data = (body.data(using: .utf8))! as Data
         
@@ -320,21 +312,21 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
     func weekdayHelper(Weekday: Int) -> String {
         switch Weekday {
         case 1:
-            return "Sonntag"
+            return NSLocalizedString("sunday", comment: "")
         case 2:
-            return "Montag"
+            return NSLocalizedString("monday", comment: "")
         case 3:
-            return "Dienstag"
+            return NSLocalizedString("tuesday", comment: "")
         case 4:
-            return "Mittwoch"
+            return NSLocalizedString("wednesday", comment: "")
         case 5:
-            return "Donnerstag"
+            return NSLocalizedString("thursday", comment: "")
         case 6:
-            return "Freitag"
+            return NSLocalizedString("friday", comment: "")
         case 7:
-            return "Samstag"
+            return NSLocalizedString("saturday", comment: "")
         default:
-            return "Montag"
+            return NSLocalizedString("monday", comment: "")
         }
     }
     
@@ -344,19 +336,19 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
         
         switch intent {
         case "None":
-            ttsResponse = "Ich konnte dich leider nicht verstehen"
+            ttsResponse = NSLocalizedString("didn't_Understand", comment: "")
             bingAccessTokenRequest(stringToSend: ttsResponse)
             
         case "favoriteMusic":
-            ttsResponse = "Hier ist mein Lieblingslied"
+            ttsResponse = NSLocalizedString("favoriteSong", comment: "")
             bingAccessTokenRequest(stringToSend: ttsResponse)
             
         case "Weather":
-            ttsResponse = "Hier ist das Wetter"
+            ttsResponse = NSLocalizedString("weather", comment: "")
             bingAccessTokenRequest(stringToSend: ttsResponse)
             
         case "Hello":
-            ttsResponse = "Hallo!"
+            ttsResponse = NSLocalizedString("hello", comment: "")
             bingAccessTokenRequest(stringToSend: ttsResponse)
             
         case "ShowTime":
@@ -365,7 +357,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
             let hour = calendar.component(.hour, from: date)
             let minutes = calendar.component(.minute, from: date)
             
-            ttsResponse = "Es ist " + String(hour) + " Uhr " + String(minutes)
+            ttsResponse = NSLocalizedString("it_Is", comment: "") + String(hour) + NSLocalizedString("O_Clock", comment: "") + String(minutes)
             bingAccessTokenRequest(stringToSend: ttsResponse)
             
         case "ShowDate":
@@ -379,26 +371,38 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
             
             let weekdayString = weekdayHelper(Weekday: weekday)
             
-            ttsResponse = "Heute ist " + weekdayString + " der " + String(day) + "." + String(month) + "." + String(year)
+            let preferredLanguage = Locale.preferredLanguages[0]
+            let separatedComponents = prefferedLanguage.components(separatedBy: "-")
+            let appLanguage = separatedComponents.first
+            
+            if appLanguage == "de" {
+                //Preferred language is German
+                ttsResponse = NSLocalizedString("today_Is", comment: "") + weekdayString + NSLocalizedString("bridging_The", comment: "") + String(day) + "." + String(month) + "." + String(year)
+            } else {
+            //App defaults to English if the preferred language isn't German
+            ttsResponse = NSLocalizedString("today_Is", comment: "") + weekdayString + NSLocalizedString("bridging_The", comment: "") + String(month)  + "/" + String(day) + "/" + String(year)
+            }
+            
+            
             bingAccessTokenRequest(stringToSend: ttsResponse)
             
         case "Facebook":
-            ttsResponse = "Hier ist Facebook"
+            ttsResponse = NSLocalizedString("facebook", comment: "")
             bingAccessTokenRequest(stringToSend: ttsResponse)
             
         case "twitter":
-            ttsResponse = "Hier ist twitter"
+            ttsResponse = NSLocalizedString("twitter", comment: "")
             bingAccessTokenRequest(stringToSend: ttsResponse)
             
         case "GoogleMaps":
-            ttsResponse = "Einen Moment..."
+            ttsResponse = NSLocalizedString("hangOn", comment: "")
             bingAccessTokenRequest(stringToSend: ttsResponse)
         case "SnowHeight":
-            ttsResponse = "Ich suche nach der aktuellen Schneehöhe"
+            ttsResponse = NSLocalizedString("snowConditions", comment: "")
             bingAccessTokenRequest(stringToSend: ttsResponse)
             
         default:
-            ttsResponse = "Ich konnte dich leider nicht verstehen"
+            ttsResponse = NSLocalizedString("didn't_Understand", comment: "")
             bingAccessTokenRequest(stringToSend: ttsResponse)
         }
         luisIntent = intent
@@ -421,7 +425,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
                 }
                 
                 case "Weather"?:
-                    if let url = URL(string: "http://www.wetter.com") {
+                    if let url = URL(string: "https://weather.com") {
                         UIApplication.shared.open(url, options: [:])
                 }
                 
@@ -452,7 +456,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
                             UIApplication.shared.open(URL(string: "http://maps.google.com/")!)
                         }
                 case "SnowHeight"?:
-                if let url = URL(string: "https://www.schneehoehen.de/") {
+                if let url = URL(string: "http://www.snow-forecast.com") {
                     UIApplication.shared.open(url, options: [:])
                 }
                 

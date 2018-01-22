@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  VoiceAssistant-iOS
+
+  Created by Robert Horrion on 1/21/18.
+  Copyright © 2018 Robert Horrion. All rights reserved.
+*/
+
+"bingSpeechRecognitionURL" = "https://speech.platform.bing.com/speech/recognition/interactive/cognitiveservices/v1?language=de-DE&format=simple";
+
+"warning" = "Warnung!";
+
+"microphoneWarning" = "Anna funktioniert nicht, wenn sie nicht das Mikrofon benutzen darf";
+
+"avaudioplayerError" = "AVAudioPlayer Fehler";
+
+"ok" = "OK";
+
+"noAudioResponseFound" = "Es wurde keine Audio Datei gefunden";
+
+"audioVoice" = "<speak version='1.0' xml:lang='en-US'><voice xml:lang='en-US' xml:gender='Female' name='Microsoft Server Speech Text to Speech Voice (de-DE, Hedda)'>";
+
+"sunday" = "Sonntag";
+
+"monday" = "Montag";
+
+"tuesday" = "Dienstag";
+
+"wednesday" = "Mittwoch";
+
+"thursday" = "Donnerstag";
+
+"friday" = "Freitag";
+
+"saturday" = "Samstag";
+
+"didn't_Understand" = "Ich konnte dich leider nicht verstehen";
+
+"favoriteSong" = "Hier ist mein Lieblingslied";
+
+"weather" = "Hier ist das Wetter";
+
+"hello" = "Hallo!";
+
+"it_Is" = "Es ist ";
+
+"O_Clock" = " Uhr ";
+
+"today_Is" = "Heute ist ";
+
+"bridging_The" = ", der ";
+
+"facebook" = "Hier ist Facebook";
+
+"twitter" = "Hier ist twitter";
+
+"hangOn" = "Einen Moment...";
+
+"snowConditions" = "Ich suche nach der aktuellen Schneehöhe";
+
