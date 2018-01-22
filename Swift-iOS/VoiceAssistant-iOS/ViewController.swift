@@ -67,14 +67,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
             //Stop the recording
             stopRecording()
             
-            //Set the Button's TextLabel to "Start" if no audio is being recorded
-            startStopButtonOutlet.titleLabel?.text = "Start"
         } else {
             //Start the recording
             captureWAVAudio()
             
-            //Set the Button's TextLabel to "Stop" if audio is being recorded
-            startStopButtonOutlet.titleLabel?.text = "Stop"
         }
     }
     
@@ -103,6 +99,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
             try! self.recorder = AVAudioRecorder(url: self.finalURL, settings: formatSettings)
             self.recorder.record()
             isRecording = true
+            
+            //Set the Button's TextLabel to "Stop" if audio is being recorded
+            startStopButtonOutlet.titleLabel!.text = "Stop"
+            
             print("recording permission == true")
             
         break
@@ -133,6 +133,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
         isRecording = false
         recorder = nil
         print("recording ended")
+        
+        //Set the Button's TextLabel to "Start" if no audio is being recorded
+        startStopButtonOutlet.titleLabel!.text = "Start"
         
         //Convert the recorded soundfile to text using Microsoft's Speech to Text API
         bingSpeechToText(FileURL: finalURL)
@@ -357,7 +360,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
             let hour = calendar.component(.hour, from: date)
             let minutes = calendar.component(.minute, from: date)
             
-            ttsResponse = NSLocalizedString("it_Is", comment: "") + String(hour) + NSLocalizedString("O_Clock", comment: "") + String(minutes)
+            let longHour = String(format: "%02d", hour)
+            let longMinute = String(format: "%02d", minutes)
+            
+            ttsResponse = NSLocalizedString("it_Is", comment: "") + String(longHour) + NSLocalizedString("O_Clock", comment: "") + String(longMinute)
             bingAccessTokenRequest(stringToSend: ttsResponse)
             
         case "ShowDate":
@@ -372,7 +378,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate  {
             let weekdayString = weekdayHelper(Weekday: weekday)
             
             let preferredLanguage = Locale.preferredLanguages[0]
-            let separatedComponents = prefferedLanguage.components(separatedBy: "-")
+            let separatedComponents = preferredLanguage.components(separatedBy: "-")
             let appLanguage = separatedComponents.first
             
             if appLanguage == "de" {

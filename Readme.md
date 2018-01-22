@@ -1,9 +1,9 @@
-# HAL1000
-Meet Hal, my custom Voice Assistant. 
+# Anna
+Meet Anna, my custom Voice Assistant. 
 
 ## Currently Supported Languages
 
-HAL1000 currently supports English and German. Feel free to add LUIS models in other languages. 
+Anna currently supports English and German. Feel free to add LUIS models in other languages. Please don't forget to update the code accordingly. 
 
 ## Library & API Usage
 [Alamofire](https://github.com/Alamofire/Alamofire) was used to make REST API calls easier and avoid boilerplate code
@@ -17,6 +17,8 @@ If you're using this app within 2 days of attending one of my talks the provided
 Otherwise you'll have to use your own subscription keys and LUIS URL. Subscription keys can be generated here:  [Azure Portal](https://portal.azure.com), a LUIS URL can be generated here: [LUIS](https://luis.ai). 
 
 The subscription key and LUIS URL constants can be found in the top section of ViewController.swift. 
+
+Please remove `&q=` from the very end of the LUIS domain. `&q=` will later be appended by the app.
 
 Before you can compile the app, you'll need to install Alamofire. Using CocoaPods to do so is highly recommended. 
 
